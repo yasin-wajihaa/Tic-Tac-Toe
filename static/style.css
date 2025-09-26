@@ -1,0 +1,18 @@
+
+
+h1 {
+    font-size: 3rem; /* big block letters */
+    font-weight: 200; /* heavy font weight */
+    font-family: 'Arial Black', Arial, sans-serif;
+    text-transform: uppercase;
+    color: transparent; /* hide default color */
+    
+    background: linear-gradient(270deg, #00d2ff, #3a47d5, #d52a8a, #b94a73);
+    background-size: 800% 800%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+    animation: colorShift 10s ease infinite;
+    position: relative;
+    margin-bottom: 1rem;
+}
