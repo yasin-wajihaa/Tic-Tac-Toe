@@ -13,7 +13,7 @@ svg[height="0"][aria-hidden="true"] {
 }
 
 body {
-  background: linear-gradient(30deg, #37015e, #260140, #130120);
+  background: linear-gradient(30deg, #260140, #130120);
   color: white; 
   min-height: 100vh;
   margin: 0;

@@ -1,0 +1,109 @@
+/* Existing Global Styles */
+html, body {
+    background: #130120;
+    color: white; 
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+:root {
+    --clr-1: #00d2ff; /* Light Blue */
+    --clr-5: #fe05c8; /* Pink/Magenta */
+    --glow-light: rgba(0, 210, 255, 0.8);
+    --glow-dark: rgba(254, 1, 224, 0.986);
+    --clr-sky-blue: #70f8ff; 
+}   
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 15px; 
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid var(--clr-1);
+    
+    /* 2. Stronger Sky Blue Shadow for the Container */
+    box-shadow: 
+        0 0 10px var(--clr-1), 
+        0 0 30px var(--clr-1),
+        0 0 50px rgba(112, 248, 255, 0.3); /* Outer halo */
+}
+
+.grid-cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    
+    
+    --cell-glow: 
+        0 0 5px var(--clr-1),      
+        0 0 10px var(--clr-1),     
+        0 0 20px var(--clr-5),     
+        inset 0 0 5px var(--clr-1), 
+        inset 0 0 10px var(--clr-5),
+        0 0 5px var(--clr-1); 
+
+    box-shadow: var(--cell-glow);
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--clr-1);
+    
+    
+    animation: flicker 5s linear infinite alternate;
+}
+
+.grid-cell:hover {
+    transform: scale(1.05) translateY(-2px); 
+
+    box-shadow: 
+        0 0 10px var(--clr-1),
+        0 0 40px var(--clr-1),
+        0 0 80px var(--clr-5);
+    
+    animation-play-state: paused; 
+}
+
+@keyframes flicker {
+    0%, 
+    60%,    
+    62%,    
+    80%,    
+    82%,    
+    90%,    
+    92%,    
+    99%,    
+    100% {
+        box-shadow: var(--cell-glow);
+        opacity: 1;
+    }
+
+    61% {
+        box-shadow: none; 
+        opacity: 0.1;
+    }
+
+    81% {
+        box-shadow: none; 
+        opacity: 0.1;
+    }
+
+    91% {
+        box-shadow: 
+            0 0 2px var(--glow-light),
+            0 0 5px var(--glow-dark);
+        opacity: 0.5; 
+    }
+
+    98% {
+        box-shadow: none; 
+        opacity: 0.1;
+    }
+}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="en">
     <head>
-        <meta charset="urf-8">
+        <meta charset="utf-8">
         <title>TIC-TAC-TOE</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,10 +30,13 @@
         <div class="main-box">
             <h2>Choose your mode</h2>
             <div class="select-btn">
-                <button id="pvp-btn">PLAYER vs PLAYER</button>
-                <button id="pvc-btn">PLAYER vs COMPUTER</button>
+                <a href="{{ url_for('start_game', mode='pvp') }}" style="text-decoration: none;">
+                    <button id="pvp-btn">PLAYER vs PLAYER</button>
+                </a>
+                <a href="{{ url_for('start_game', mode='pvc') }}" style="text-decoration: none;">
+                    <button id="pvc-btn">PLAYER vs COMPUTER</button>
+                </a>
             </div>
-
         </div>
     </body>
 </html>
